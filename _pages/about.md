@@ -8,27 +8,27 @@ redirect_from:
   - /about.html
 ---
 
-# About Me
+# 👋 About Me {#about-me}
 
 My name is **Cheng Yan**, and I am affiliated with **[Nanjing Medical University](https://english.njmu.edu.cn/)**. My research interests include **cancer biology, epigenetic regulation, and bioinformatics**.
 
 I combine computational analyses with experimental approaches to investigate gene regulation and the molecular mechanisms underlying cancer development and progression.
 
-I welcome opportunities to exchange ideas and collaborate with researchers across biomedical science and computational biology.
+🤝 I welcome opportunities to exchange ideas and collaborate with researchers across biomedical science and computational biology.
 
 <p class="profile-links"><a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar ↗</a><a href="https://github.com/ychengDGC">GitHub ↗</a></p>
 
-# Research
+# 🔬 Research {#research}
 
 - **Cancer biology:** gene regulation and molecular mechanisms in cancer development and progression.
 - **Epigenetic regulation:** the relationship between epigenetic states and gene expression.
 - **Bioinformatics:** computational analysis of biological data in combination with experimental research.
 
-# News
+# 🔥 News {#news}
 
-- **March 2026** — Our review on endogenous retroviruses was published online in *BBA – Reviews on Cancer*. [Read the paper](https://doi.org/10.1016/j.bbcan.2026.189574).
+- **March 2026** — 🎉 Our review on endogenous retroviruses was published online in *BBA – Reviews on Cancer*. [Read the paper](https://doi.org/10.1016/j.bbcan.2026.189574).
 
-# Publications
+# 📝 Publications {#publications}
 
 <p class="publication-note">† Equal contribution. See <a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar</a> for the latest citation information.</p>
 
@@ -51,7 +51,7 @@ This review examines how endogenous retroviruses regulate development and immuni
 
 <p class="scholar-update" data-scholar-updated hidden></p>
 
-# Contact
+# 💬 Contact {#contact}
 
 Find my publications on [Google Scholar](https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en), or visit my [GitHub profile](https://github.com/ychengDGC).
 
