@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Cheng Yan — Nanjing Medical University. Endogenous retroviruses, immunity, and disease."
+excerpt: "Cheng Yan — Nanjing Medical University. Cancer biology, epigenetic regulation, and bioinformatics."
 author_profile: true
 redirect_from:
   - /about/
@@ -10,18 +10,19 @@ redirect_from:
 
 # About Me
 
-I am **Cheng Yan**, affiliated with [Nanjing Medical University](https://english.njmu.edu.cn/). My published work examines **endogenous retroviruses** and their regulatory roles in development, immunity, and disease.
+My name is **Cheng Yan**, and I am affiliated with **[Nanjing Medical University](https://english.njmu.edu.cn/)**. My research interests include **cancer biology, epigenetic regulation, and bioinformatics**.
+
+I combine computational analyses with experimental approaches to investigate gene regulation and the molecular mechanisms underlying cancer development and progression.
+
+I welcome opportunities to exchange ideas and collaborate with researchers across biomedical science and computational biology.
 
 <p class="profile-links"><a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar ↗</a><a href="https://github.com/ychengDGC">GitHub ↗</a></p>
 
 # Research
 
-My recent review brings together evidence on the roles of endogenous retroviruses across four connected areas:
-
-- **Development:** regulatory functions in early development and cell identity.
-- **Immunity:** links to innate immune sensing and immune regulation.
-- **Disease:** consequences of dysregulated expression in cancer and other diseases.
-- **Therapeutic opportunities:** potential applications in biomarkers and treatment strategies.
+- **Cancer biology:** gene regulation and molecular mechanisms in cancer development and progression.
+- **Epigenetic regulation:** the relationship between epigenetic states and gene expression.
+- **Bioinformatics:** computational analysis of biological data in combination with experimental research.
 
 # News
 
