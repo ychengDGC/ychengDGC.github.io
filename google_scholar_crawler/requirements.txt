@@ -1,1 +1,6 @@
 scholarly==1.7.11
+# scholarly still imports the bibtexparser 1.x API and uses httpx's proxies argument.
+bibtexparser==1.4.4
+httpx==0.27.2
+# Keep the bundled, offline UserAgent().random API verified by the smoke check.
+fake-useragent==2.2.0
