@@ -1,29 +1,78 @@
-name: Get Citation Data
+name: Update Google Scholar Citations
 
-on: 
- page_build: 
- schedule:
-  - cron:  '0 8 * * *'
+on:
+  workflow_dispatch:
+  page_build:
+  schedule:
+    - cron: '0 8 * * *'
+
+permissions: {}
+
+concurrency:
+  group: google-scholar-stats
+  cancel-in-progress: false
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Reqs
-      run: |
-        sudo apt-get install python3-setuptools
-    - name: Run
-      run: |
-        cd ./google_scholar_crawler
-        pip3 install -r requirements.txt
-        python3 main.py
-        cd ./results
-        git init
-        git config --local user.name "${GITHUB_ACTOR}"
-        export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
-        git add *.json
-        git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:google-scholar-stats --force
-      env: 
-        GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+      - name: Check Scholar configuration
+        id: configuration
+        shell: bash
+        run: |
+          if [[ -z "${GOOGLE_SCHOLAR_ID//[[:space:]]/}" ]]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Google Scholar update skipped: add the GOOGLE_SCHOLAR_ID repository secret to enable automatic citation updates." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.configuration.outputs.configured == 'true'
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        if: steps.configuration.outputs.configured == 'true'
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: google_scholar_crawler/requirements.txt
+
+      - name: Install crawler
+        if: steps.configuration.outputs.configured == 'true'
+        run: python -m pip install -r google_scholar_crawler/requirements.txt
+
+      - name: Fetch and validate citation data
+        if: steps.configuration.outputs.configured == 'true'
+        run: python google_scholar_crawler/main.py --output-dir "$RUNNER_TEMP/scholar-results"
+
+      - name: Publish citation data
+        if: steps.configuration.outputs.configured == 'true'
+        shell: bash
+        run: |
+          git ls-remote --heads origin google-scholar-stats > "$RUNNER_TEMP/scholar-stats-ref"
+          if [[ -s "$RUNNER_TEMP/scholar-stats-ref" ]]; then
+            git fetch origin refs/heads/google-scholar-stats:refs/remotes/origin/google-scholar-stats
+            git checkout -b scholar-stats-update refs/remotes/origin/google-scholar-stats
+          else
+            git checkout --orphan scholar-stats-update
+            git rm -rf .
+          fi
+          cp "$RUNNER_TEMP/scholar-results/gs_data.json" gs_data.json
+          cp "$RUNNER_TEMP/scholar-results/gs_data_shieldsio.json" gs_data_shieldsio.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gs_data.json gs_data_shieldsio.json
+          if git diff --cached --quiet; then
+            echo "Citation data is unchanged." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Update Google Scholar citation data"
+            git push origin HEAD:refs/heads/google-scholar-stats
+            echo "Google Scholar citation data updated." >> "$GITHUB_STEP_SUMMARY"
+          fi

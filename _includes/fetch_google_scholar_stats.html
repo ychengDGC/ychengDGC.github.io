@@ -1,19 +1,74 @@
 <script>
-    $(document).ready(function () {
-        {% if site.google_scholar_stats_use_cdn %}
-        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@'
-        {% else %}
-        var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/'
-        {% endif %}
-        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
-            var totalCitation = data['citedby']
-            document.getElementById('total_cit').innerHTML = totalCitation;
-            var citationEles = document.getElementsByClassName('show_paper_citations')
-            Array.prototype.forEach.call(citationEles, element => {
-                var paperId = element.getAttribute('data')
-                var numCitations = data['publications'][paperId]['num_citations']
-                element.innerHTML = '| Citations: ' + numCitations;
-            });
+(function () {
+    function isCount(value) {
+        return typeof value === 'number' && Number.isInteger(value) && value >= 0;
+    }
+
+    async function updateScholarStats() {
+        var expectedScholarId = {{ site.google_scholar_id | default: '' | jsonify }};
+        var nodes = document.querySelectorAll('[data-scholar-stat], #total_cit, .show_paper_citations, [data-scholar-updated]');
+        nodes.forEach(function (node) {
+            node.textContent = '';
+            node.hidden = true;
         });
-    })
+        if (!expectedScholarId || nodes.length === 0) return;
+
+        {% if site.google_scholar_stats_use_cdn %}
+        var statsUrl = 'https://cdn.jsdelivr.net/gh/{{ site.repository }}@google-scholar-stats/gs_data.json';
+        {% else %}
+        var statsUrl = 'https://raw.githubusercontent.com/{{ site.repository }}/google-scholar-stats/gs_data.json';
+        {% endif %}
+        var urls = [statsUrl, {{ '/assets/data/scholar.json' | relative_url | jsonify }}];
+        var snapshot;
+        for (var url of urls) {
+            var controller = new AbortController();
+            var timeout = setTimeout(function () { controller.abort(); }, 5000);
+            try {
+                var response = await fetch(url, {cache: 'no-cache', signal: controller.signal});
+                if (!response.ok) throw new Error('Citation data is unavailable.');
+                var data = await response.json();
+                if (!data || data.google_scholar_id !== expectedScholarId || !isCount(data.citedby)) {
+                    throw new Error('Citation data does not match this Scholar profile.');
+                }
+                snapshot = data;
+                break;
+            } catch (error) {
+                // A local, verified snapshot remains available when Scholar or its CDN is blocked.
+            } finally {
+                clearTimeout(timeout);
+            }
+        }
+        if (!snapshot) return;
+
+        document.querySelectorAll('[data-scholar-stat], #total_cit').forEach(function (node) {
+            var key = node.getAttribute('data-scholar-stat') || 'citedby';
+            if (isCount(snapshot[key])) {
+                node.textContent = String(snapshot[key]);
+                node.hidden = false;
+            }
+        });
+        document.querySelectorAll('.show_paper_citations').forEach(function (node) {
+            var paperId = node.getAttribute('data');
+            var publication = snapshot.publications && snapshot.publications[paperId];
+            if (publication && isCount(publication.num_citations)) {
+                node.textContent = '| Citations: ' + publication.num_citations;
+                node.hidden = false;
+            }
+        });
+        var updated = new Date(snapshot.updated);
+        if (snapshot.updated && !Number.isNaN(updated.getTime())) {
+            document.querySelectorAll('[data-scholar-updated]').forEach(function (node) {
+                node.textContent = 'Citation data checked: ' + updated.toISOString().slice(0, 10);
+                node.setAttribute('datetime', updated.toISOString());
+                node.hidden = false;
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateScholarStats);
+    } else {
+        updateScholarStats();
+    }
+})();
 </script>

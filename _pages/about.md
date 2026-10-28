@@ -1,58 +1,57 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
+excerpt: "Cheng Yan — Nanjing Medical University. Endogenous retroviruses, immunity, and disease."
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+# About Me
 
-<span class='anchor' id='about-me'></span>
+I am **Cheng Yan**, affiliated with [Nanjing Medical University](https://english.njmu.edu.cn/). My published work examines **endogenous retroviruses** and their regulatory roles in development, immunity, and disease.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+<p class="profile-links"><a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar ↗</a><a href="https://github.com/ychengDGC">GitHub ↗</a></p>
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+# Research
 
+My recent review brings together evidence on the roles of endogenous retroviruses across four connected areas:
 
-# 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- **Development:** regulatory functions in early development and cell identity.
+- **Immunity:** links to innate immune sensing and immune regulation.
+- **Disease:** consequences of dysregulated expression in cancer and other diseases.
+- **Therapeutic opportunities:** potential applications in biomarkers and treatment strategies.
 
-# 📝 Publications 
+# News
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+- **March 2026** — Our review on endogenous retroviruses was published online in *BBA – Reviews on Cancer*. [Read the paper](https://doi.org/10.1016/j.bbcan.2026.189574).
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+# Publications
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+<p class="publication-note">† Equal contribution. See <a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar</a> for the latest citation information.</p>
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<div class="paper-box">
+<div class="paper-box-image"><a href="https://doi.org/10.1016/j.bbcan.2026.189574" aria-label="Read the endogenous retroviruses review"><img src="/images/erv-review.svg" alt="Endogenous retroviruses: development, immunity, disease, and therapeutic opportunities" width="600" height="400" loading="lazy"></a></div>
+<div class="paper-box-text" markdown="1">
+
+### [Endogenous retroviruses in development, immunity, and disease: From regulatory roles to therapeutic opportunities](https://doi.org/10.1016/j.bbcan.2026.189574)
+
+**Cheng Yan†**, Wang Li†, Linjie Peng†, Juan Xu, Chenglin Zhou
+
+*Biochimica et Biophysica Acta (BBA) – Reviews on Cancer*, **1881**(3), 189574, 2026.
+
+This review examines how endogenous retroviruses regulate development and immunity, how their dysregulation contributes to disease, and how these elements may inform biomarkers and therapeutic strategies.
+
+<p class="paper-links"><a href="https://doi.org/10.1016/j.bbcan.2026.189574">Paper ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/41833716/">PubMed ↗</a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;user=MpW5U2EAAAAJ&amp;citation_for_view=MpW5U2EAAAAJ:u5HHmVD_uO8C">Scholar ↗</a><span class="show_paper_citations" data="MpW5U2EAAAAJ:u5HHmVD_uO8C"></span></p>
+
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+<p class="scholar-update" data-scholar-updated hidden></p>
 
-# 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+# Contact
 
-# 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+Find my publications on [Google Scholar](https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en), or visit my [GitHub profile](https://github.com/ychengDGC).
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
-
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+<p class="site-footer">Cheng Yan · Academic homepage</p>
