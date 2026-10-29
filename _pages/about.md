@@ -28,6 +28,9 @@ I combine computational analyses with experimental approaches to investigate gen
 
 - **March 2026** — 🎉 Our review on endogenous retroviruses was published online in *BBA – Reviews on Cancer*. [Read the paper](https://doi.org/10.1016/j.bbcan.2026.189574).
 
+- **September 2025** — 🎉 My abstract was accepted for written communication at the [19th National Congress on Laboratory Medicine of the Chinese Medical Association](https://cslm2025.sciconf.cn/en/web/index/29935), Jinan, China.
+- **July 2024** — 🎉 My abstract was accepted for electronic poster presentation at the [18th National Congress on Laboratory Medicine of the Chinese Medical Association](https://cslm2024.sciconf.cn/en/web/index/21477), Hangzhou, China.
+
 # 📝 Publications {#publications}
 
 <p class="publication-note">† Equal contribution. See <a href="https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en">Google Scholar</a> for the latest citation information.</p>
