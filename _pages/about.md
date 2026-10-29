@@ -51,6 +51,11 @@ This review examines how endogenous retroviruses regulate development and immuni
 
 <p class="scholar-update" data-scholar-updated hidden></p>
 
+# 📅 Conferences {#conferences}
+
+- **October 30–November 1, 2025** — [19th National Congress on Laboratory Medicine of the Chinese Medical Association](https://cslm2025.sciconf.cn/en/web/index/29935), Jinan, China. **Abstract accepted for written communication.**
+- **August 22–24, 2024** — [18th National Congress on Laboratory Medicine of the Chinese Medical Association](https://cslm2024.sciconf.cn/en/web/index/21477), Hangzhou, China. **Abstract accepted for electronic poster presentation.**
+
 # 💬 Contact {#contact}
 
 Find my publications on [Google Scholar](https://scholar.google.com/citations?user=MpW5U2EAAAAJ&hl=en), or visit my [GitHub profile](https://github.com/ychengDGC).
